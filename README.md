@@ -1,3 +1,35 @@
+# Front End technical challenge
+
+This challenge builds on the back end task. We've bootstrapped it using React create app to get you going as quickly as possible.
+
+## Set up:
+
+In the project directory:
+
+```
+  yarn install
+```
+
+Then:
+
+```
+  yarn start
+```
+
+Open in browser: http://localhost:3000
+
+## Instructions
+
+This application shows workstations that our platform manages. However, all we've managed to implement is a simple wireframe that isn't connected to the API.
+
+We'd like you to flesh things out:
+
+* Connect the application to the backend using XHR, Fetch, etc. The frontend should use the API to retrieve a list of workstations and users to populate the workstations screen.
+* Take advantage of the API's ability to include `users` with their related `workstations`
+* The `<Workstations>` component should be refactored into a series of smaller components, for example `<Workstation>`, `<Users>`. 
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
