@@ -1,6 +1,6 @@
 # Front End technical challenge
 
-This challenge builds on the back end task. We've bootstrapped it using React create app to get you going as quickly as possible.
+This challenge builds on the back end task (https://github.com/ArchPlatform/backend-test). We've bootstrapped this project using React create app to get you going as quickly as possible.
 
 ## Set up:
 
@@ -27,6 +27,19 @@ We'd like you to flesh things out:
 * Connect the application to the backend using XHR, Fetch, etc. The frontend should use the API to retrieve a list of workstations and users to populate the workstations screen.
 * Take advantage of the API's ability to include `users` with their related `workstations`
 * The `<Workstations>` component should be refactored into a series of smaller components, for example `<Workstation>`, `<Users>`. 
+
+## Notes
+
+* Don't forget the backend app needs to be running. Run it using `rails s -p 3005` from the backend app folder.
+* Rather than hard coding the API url into the javascript, we've defined it in a `.env` file. You can pull in the API url using `process.env.REACT_APP_BACKEND_API`
+* This shouldn't take more than a few hours. If you don't have time to complete it, don't worry - we're much more interested in how you approach the problem.
+* If you want to provide more background on how you would have completed the problem, or any other notes, please put them in a NOTES.md file at the root of the project.
+
+## Submitting your solution
+
+Clone the repo and make your changes locally. When ready to submit, zip up the project and send it back to us.
+
+To avoid problems with attachments being blocked, either send the file with Dropbox or WeTransfer.
 
 ---
 
