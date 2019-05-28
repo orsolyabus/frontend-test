@@ -12,14 +12,6 @@ const styles = theme => ({
     minWidth: 375,
     margin: theme.spacing.unit,
   },
-  avatars: {
-    display: 'flex',
-  },
-  avatar: {
-    width: 40,
-    height: 40,
-    marginRight: theme.spacing.unit,
-  },
   instanceType: {
     marginBottom: 12,
   },
