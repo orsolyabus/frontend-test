@@ -1,4 +1,3 @@
-// individual cards in list
 import {
   Avatar,
   Card,
@@ -42,7 +41,8 @@ const styles = theme => ({
 });
 
 function Workstation(props) {
-  const { classes } = props;
+  const { classes, station } = props;
+  console.log(station)
   return (
     <Card className={classes.card}>
       <CardContent>
@@ -52,17 +52,17 @@ function Workstation(props) {
             color="textSecondary"
             gutterBottom
           >
-            Linux
+            {station.attributes.platform}
             </Typography>
           <div className={classes.statusIndicator}>
-            <Typography>RUNNING</Typography>
+            <Typography>{station.attributes.status}</Typography>
           </div>
         </div>
         <Typography variant="h5" component="h2">
-          Simon's computer
+        {station.attributes.name}
         </Typography>
         <Typography className={classes.instanceType} color="textSecondary">
-          g3.4xlarge
+        {station.attributes.instance_type}
         </Typography>
         <div className={classes.avatars}>
           <Avatar className={classes.avatar}>SL</Avatar>
