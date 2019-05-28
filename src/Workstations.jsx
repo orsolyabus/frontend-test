@@ -42,9 +42,8 @@ class Workstations extends Component {
     return (
       <div className={this.props.classes.root}>
         {this.state.workstations.map(station => (
-          <WorkstationCard station={station} key={station.id} />
+          <WorkstationCard station={station} key={station.id} users={this.state.users} />
         ))}
-
       </div>
     )
   };

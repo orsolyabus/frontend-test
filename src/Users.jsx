@@ -1,23 +1,22 @@
-import { Avatar, withStyles } from '@material-ui/core';
+import { Chip, withStyles } from '@material-ui/core';
 import React from 'react';
 
 const styles = theme => ({
   avatars: {
     display: 'flex',
   },
-  avatar: {
-    width: 40,
-    height: 40,
+  chip: {
     marginRight: theme.spacing.unit,
   },
 })
 
 function Users(props) {
-  const { classes, } = props;
+  const { classes, users } = props;
   return (
     < div className={classes.avatars} >
-      <Avatar className={classes.avatar}>SL</Avatar>
-      <Avatar className={classes.avatar}>EC</Avatar>
+      {users.map(user => (
+        <Chip label={user.attributes.name} className={classes.chip} key={user.id} />
+      ))}
     </div >
   )
 }

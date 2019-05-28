@@ -42,7 +42,9 @@ const styles = theme => ({
 });
 
 function Workstation(props) {
-  const { classes, station } = props;
+  const { classes, station, users } = props;
+  const currentUsers = station.relationships.users
+    .flatMap(currUser => users.filter(u => u.id===currUser.id));
   return (
     <Card className={classes.card}>
       <CardContent>
@@ -64,7 +66,7 @@ function Workstation(props) {
         <Typography className={classes.instanceType} color="textSecondary">
         {station.attributes.instance_type}
         </Typography>
-        <Users/>
+        <Users users={currentUsers}/>
       </CardContent>
     </Card>
   )
