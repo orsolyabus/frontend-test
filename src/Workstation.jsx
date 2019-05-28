@@ -1,11 +1,12 @@
 import {
-  Avatar,
+  // Avatar,
   Card,
   CardContent,
   Typography,
   withStyles,
 } from '@material-ui/core';
 import React from 'react';
+import Users from './Users';
 
 const styles = theme => ({
   card: {
@@ -42,7 +43,6 @@ const styles = theme => ({
 
 function Workstation(props) {
   const { classes, station } = props;
-  console.log(station)
   return (
     <Card className={classes.card}>
       <CardContent>
@@ -64,39 +64,10 @@ function Workstation(props) {
         <Typography className={classes.instanceType} color="textSecondary">
         {station.attributes.instance_type}
         </Typography>
-        <div className={classes.avatars}>
-          <Avatar className={classes.avatar}>SL</Avatar>
-          <Avatar className={classes.avatar}>EC</Avatar>
-        </div>
+        <Users/>
       </CardContent>
     </Card>
   )
 }
 
 export default withStyles(styles, { withTheme: true })(Workstation);
-
-/* <Card className={classes.card}>
-    <CardContent>
-      <div className={classes.overline}>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Linux
-        </Typography>
-        <div className={classes.statusIndicator}>
-          <Typography>RUNNING</Typography>
-        </div>
-      </div>
-      <Typography variant="h5" component="h2">
-        Dave's computer
-      </Typography>
-      <Typography className={classes.instanceType} color="textSecondary">
-        g3.4xlarge
-      </Typography>
-
-      <Avatar className={classes.avatar}>DN</Avatar>
-    </CardContent>
-  </Card>
-  */
