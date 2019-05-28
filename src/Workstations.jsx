@@ -1,9 +1,7 @@
-import {
-  withStyles,
-} from '@material-ui/core';
+import { withStyles, } from '@material-ui/core';
 import React, { Component } from 'react';
 import WorkstationCard from './Workstation';
-import {Workstation} from './requests';
+import { Workstation } from './requests';
 
 const styles = theme => ({
   root: {
@@ -25,29 +23,29 @@ class Workstations extends Component {
   }
   componentDidMount() {
     Workstation.all().then(workstations => {
-      this.setState({ 
+      this.setState({
         workstations: workstations.data,
         users: workstations.included,
         loading: false
       });
     });
   }
-  
-  render(){
-    if (this.state.loading){
+
+  render() {
+    if (this.state.loading) {
       return (
         <main className="QuestionIndexPage">
           <h2>Loading...</h2>
         </main>
       )
     }
-    return(
-    <div className={this.props.classes.root}>      
-      {this.state.workstations.map(station => (
-        <WorkstationCard station={station} key={station.id}/>        
-      ))}
-      
-    </div>
+    return (
+      <div className={this.props.classes.root}>
+        {this.state.workstations.map(station => (
+          <WorkstationCard station={station} key={station.id} />
+        ))}
+
+      </div>
     )
   };
 }
