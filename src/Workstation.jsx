@@ -1,5 +1,4 @@
 import {
-  // Avatar,
   Card,
   CardContent,
   Typography,
@@ -35,7 +34,7 @@ const styles = theme => ({
       theme.palette.type === 'light'
         ? 'rgba(0, 0, 0, 0.23)'
         : 'rgba(255, 255, 255, 0.23)'
-    }`,
+      }`,
     padding: '5px 16px',
     fontWeight: 400,
   },
@@ -44,7 +43,7 @@ const styles = theme => ({
 function Workstation(props) {
   const { classes, station, users } = props;
   const currentUsers = station.relationships.users
-    .flatMap(currUser => users.filter(u => u.id===currUser.id));
+    .flatMap(currUser => users.filter(u => u.id === currUser.id));
   return (
     <Card className={classes.card}>
       <CardContent>
@@ -55,18 +54,18 @@ function Workstation(props) {
             gutterBottom
           >
             {station.attributes.platform}
-            </Typography>
+          </Typography>
           <div className={classes.statusIndicator}>
             <Typography>{station.attributes.status}</Typography>
           </div>
         </div>
         <Typography variant="h5" component="h2">
-        {station.attributes.name}
+          {station.attributes.name}
         </Typography>
         <Typography className={classes.instanceType} color="textSecondary">
-        {station.attributes.instance_type}
+          {station.attributes.instance_type}
         </Typography>
-        <Users users={currentUsers}/>
+        <Users users={currentUsers} />
       </CardContent>
     </Card>
   )
